@@ -60,7 +60,7 @@ class Provider implements AuthenticationProviderInterface
         }
 
         //validate secret
-        $created = str_replace( array(':','-'), ' ', $created );
+        $created = str_replace( array(':','-'), '', $created );
 
         $expected = base64_encode(sha1(base64_decode($nonce).$created.$secret, true));
 
